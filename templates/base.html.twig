@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+{% include 'head.html.twig' %}
+<body class="hidden">
+<main>
+    {% include 'loader.html.twig' %};
+    <div class="cd-index cd-main-content">
+        <!-- Page Content -->
+        <div id="page-content" class="" data-bgcolor="#eee">
+            <!-- Background Lines -->
+            <div class="bg-lines hidden">
+                <svg>
+                    <line x1="20%" y1="100%" x2="80%" y2="0"/>
+                    <line x1="80%" y1="100%" x2="20%" y2="0"/>
+                </svg>
+            </div>
+            <!--/Background Lines -->
+            {% include 'header.html.twig' %};
+            {% include 'menu.html.twig' %};
+            {%  block content %}{% endblock %}
+            {% include 'footer/footer.html.twig' %};
+        </div>
+        <!--/Page Content -->
+        <div id="rotate-device"></div>
+    </div>
+</main>
+{% include 'scripts.html.twig' %};
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    <!-- Showcase Holder -->
+    <div id="showcase-holder">
+        <div id="showcase-slider">
+
+            <!-- Section Slide -->
+            {% for picture in pictures %}
+            <div class="section light-content">
+
+                <div class="img-mask">
+                    <a class="ajax-link-project" data-type="page-transition" href="#">
+                        <div class="img-perspective">
+                            <div class="img-split">
+                                <div class="section-image" data-src="../images/{{ picture.url }}.jpg"></div>
+                                <div class="section-image-mirror"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="section-shadow"></div>
+
+                <div class="section-caption-outer">
+                    <div class="section-caption-inner">
+                        <h2 class="section-title sa-one">{{ picture.name }}</h2>
+                        <p class="section-subtitle sa-two">{{ picture.description }}</p>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+            <!--/Section Slide -->
+
+            <!-- Section Slide -->
+            <div class="section text-align-center last-slide">
+
+                <p class="smaller sa-one">Are you ready for more?</p>
+                <h2 class="sa-two">View our entire <br class="destroy">Portfolio projects collection</h2>
+
+                <hr>
+
+                <div class="sa-three">
+                    <a href="/works" class="clapat-button rounded outline" data-type="page-transition" ><span>See More</span></a>
+                </div>
+
+            </div>
+            <!--/Section Slide -->
+
+        </div>
+    </div>
+    <!-- Showcase Holder -->
+{% endblock %}

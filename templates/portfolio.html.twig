@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+    {% include('portfolio-filters.html.twig') %}
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Hero Section -->
+        <div id="hero">
+            <div id="hero-styles" class="opacity-onscroll">
+                <div id="hero-caption">
+                    <div class="inner">
+                        <h1 class="hero-title">Our Portfolio</h1>
+                        <p class="hero-subtitle">Made by ClaPat Studio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="hero-height" class="hidden"></div>
+        <!--/Hero Section -->
+
+        <!-- Main Content -->
+        <div id="main-content">
+
+            <!-- Portfolio Wrap -->
+            <div id="portfolio-wrap" class="visible-text">
+                <!-- Portfolio Columns -->
+                <div id="portfolio" data-col="3">
+                    {% for picture in pictures %}
+                        <div class="item photo">
+                            <div class="item-content">
+                                <div class="item-shadow"></div>
+                                <a href="{{ picture.category }}" class="ajax-link" data-type="page-transition">
+                                    <div class="item-image" data-src="../images/{{ picture.url }}.jpg"
+                                         alt="Wizzard Portfolio Template by ClaPat"></div>
+                                    <div class="item-gradient"></div>
+                                </a>
+                                <div class="item-caption">
+                                    <h2 class="item-title">{{ picture.name }}</h2>
+                                    <h3 class="item-sub-mask">
+                                        <span class="item-cat">{{ picture.date }}</span>
+                                        <span class="item-case">{{ picture.tools }}</span>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!--/Portfolio -->
+            </div>
+            <!--/Portfolio Wrap -->
+        </div>
+        <!--/Main Content -->
+    </div>
+    <!--/Main -->
+{% endblock %}

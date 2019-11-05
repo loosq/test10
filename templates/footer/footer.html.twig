@@ -1,0 +1,14 @@
+<!-- Footer -->
+<footer class="hidden after-slider">
+    <div id="footer-container">
+        {% if footerFilters == true %}
+            {% include('footer/footer-filters.html.twig') %}
+        {% elseif footerFilters != true %}
+            {% include('footer/footer-navigation.html.twig') %}
+        {% endif %}
+
+        {% include('footer/footer-social.html.twig') %}
+
+    </div>
+</footer>
+<!--/Footer -->

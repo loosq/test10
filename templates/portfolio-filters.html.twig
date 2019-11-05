@@ -1,0 +1,19 @@
+<!-- Portfolio Filters -->
+<div class="page-action-overlay">
+    <div class="outer">
+        <div class="inner">
+            <div class="close-page-action"></div>
+            <p class="page-action-text">Categories:</p>
+            <ul id="filters" class="page-action-content">
+                {% for category in categories %}
+                    <li><a href="/{{ category.name }}" data-filter=".photo">{{ category.name | capitalize }}</a><span>{{ category.total }}</span></li>
+                {% endfor %}
+{#                <li><a id="all" href="#" data-filter="*" class="active">All</a><span>09</span></li>#}
+{#                <li><a href="#" data-filter=".photo">Photography</a><span>03</span></li>#}
+{#                <li><a href="#" data-filter=".branding">Branding</a><span>03</span></li>#}
+{#                <li><a href="#" data-filter=".design">Design</a><span>03</span></li>#}
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Portfolio Filters -->
